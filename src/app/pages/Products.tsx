@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
-import { Apple, Smartphone, ExternalLink, Clock, CheckCircle2 } from "lucide-react";
+import { BookOpen, Code2, ShoppingCart, ExternalLink, Sparkles } from "lucide-react";
 
 function FadeIn({
   children,
@@ -23,82 +23,110 @@ function FadeIn({
   );
 }
 
-const products = [
+export type ProductType = "ebook" | "app_code";
+
+export interface Product {
+  id: string;
+  type: ProductType;
+  name: string;
+  tagline: string;
+  description: string;
+  image: string;
+  color: string;
+  gradient: string;
+  highlights: string[];
+  price?: string;
+  buyUrl: string;
+}
+
+const products: Product[] = [
   {
-    id: "femtrack",
-    name: "FemTrack",
-    icon: "🌸",
-    iconBg: "linear-gradient(135deg, #ec4899, #8b5cf6)",
-    tagline: "Women's Health & Cycle Tracking",
+    id: "flutter-clean-arch",
+    type: "ebook",
+    name: "Flutter Clean Architecture",
+    tagline: "From zero to production",
     description:
-      "A privacy-first women's health app that empowers users to track menstrual cycles, log symptoms, monitor moods, and gain predictive insights — all in a beautifully minimal interface.",
-    platform: ["flutter", "ios"],
-    status: "live",
+      "A practical guide to building scalable Flutter apps with Clean Architecture, Riverpod, and best practices. Covers folder structure, dependency injection, and testing.",
+    image: "https://uiuxshelly.vercel.app/assets/2-C1BiLFaB.png",
+    color: "#54C5F8",
+    gradient: "linear-gradient(135deg, #54C5F8 0%, #3b82f6 100%)",
+    highlights: ["Clean Architecture", "Riverpod", "Testing", "Real projects"],
+    price: "$29",
+    buyUrl: "#",
+  },
+  {
+    id: "swiftui-cookbook",
+    type: "ebook",
+    name: "SwiftUI Cookbook",
+    tagline: "Recipes for native iOS UI",
+    description:
+      "Step-by-step recipes for common SwiftUI patterns: navigation, lists, forms, animations, and integration with HealthKit and Core Data.",
+    image: "https://uiuxshelly.vercel.app/assets/1-BFCqUArY.png",
+    color: "#F05138",
+    gradient: "linear-gradient(135deg, #F05138 0%, #ec4899 100%)",
+    highlights: ["SwiftUI", "HealthKit", "Animations", "Production tips"],
+    price: "$24",
+    buyUrl: "#",
+  },
+  {
+    id: "femtrack-source",
+    type: "app_code",
+    name: "FemTrack – Full Source Code",
+    tagline: "Production Flutter app",
+    description:
+      "Complete source code of the FemTrack women's health app: cycle tracking, symptom logging, encrypted storage, and Apple Health sync. Flutter + Firebase.",
+    image: "https://uiuxshelly.vercel.app/assets/3-CsPL_l1_.png",
     color: "#ec4899",
     gradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
-    image: "https://images.unsplash.com/photo-1675119711588-ecd395253cec?w=500&q=80",
-    highlights: ["Cycle prediction AI", "Symptom logging", "Encrypted health data", "Apple Health sync"],
-    storeLink: "#",
-    playLink: "#",
+    highlights: ["Full source", "Documentation", "Firebase setup", "App Store ready"],
+    price: "$199",
+    buyUrl: "#",
   },
   {
-    id: "pillowtalk",
-    name: "PillowTalk",
-    icon: "🌙",
-    iconBg: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
-    tagline: "AI-Powered Sleep Wellness",
+    id: "pillowtalk-source",
+    type: "app_code",
+    name: "PillowTalk – App Code",
+    tagline: "AI sleep wellness app",
     description:
-      "Sleep better with AI-generated coaching, guided meditations, ambient soundscapes, and detailed sleep analytics. PillowTalk is the only sleep app that actually explains your patterns.",
-    platform: ["flutter"],
-    status: "live",
+      "Full Flutter codebase for an AI-powered sleep app: coaching, soundscapes, meditations, and analytics. Includes backend integration patterns.",
+    image: "https://uiuxshelly.vercel.app/assets/4-B49ANgFQ.png",
     color: "#8b5cf6",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
-    image: "https://images.unsplash.com/photo-1673974943582-771d2b7ee30d?w=500&q=80",
-    highlights: ["AI sleep coaching", "Ambient soundscapes", "Guided meditations", "Sleep score tracking"],
-    storeLink: "#",
-    playLink: "#",
+    highlights: ["Flutter", "AI integration", "Audio", "Analytics"],
+    price: "$249",
+    buyUrl: "#",
   },
   {
-    id: "nutrahara",
-    name: "Nutrahara",
-    icon: "🥗",
-    iconBg: "linear-gradient(135deg, #3b82f6, #06b6d4)",
-    tagline: "iOS Nutrition Intelligence",
+    id: "nutrahara-source",
+    type: "app_code",
+    name: "Nutrahara – iOS Source",
+    tagline: "Native SwiftUI nutrition app",
     description:
-      "A native iOS nutrition tracker with a 500k+ food database, barcode scanning, and gorgeous macro dashboards. Built entirely in SwiftUI with deep HealthKit integration.",
-    platform: ["ios"],
-    status: "live",
+      "Complete SwiftUI source: 500k+ food database, barcode scanning, HealthKit sync, and macro dashboards. Production-quality native iOS.",
+    image: "https://uiuxshelly.vercel.app/assets/232-3q9WQhvQ.png",
     color: "#3b82f6",
     gradient: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
-    image: "https://images.unsplash.com/photo-1758786977080-a5e60a3f843c?w=500&q=80",
-    highlights: ["500k+ food database", "Barcode scanner", "HealthKit integration", "Macro tracking"],
-    storeLink: "#",
-    playLink: null,
-  },
-  {
-    id: "aibudget",
-    name: "AI Budget Tracker",
-    icon: "💰",
-    iconBg: "linear-gradient(135deg, #34d399, #3b82f6)",
-    tagline: "Smart Finance with AI Insights",
-    description:
-      "The next-gen finance app. AI analyzes your spending, predicts future expenses, and coaches you in natural language. Real-time bank sync, multi-currency, beautifully designed in Flutter.",
-    platform: ["flutter"],
-    status: "coming",
-    color: "#34d399",
-    gradient: "linear-gradient(135deg, #34d399 0%, #3b82f6 100%)",
-    image: "https://images.unsplash.com/photo-1591467454366-fb32b72b20e9?w=500&q=80",
-    highlights: ["AI spending analysis", "Real-time bank sync", "Multi-currency support", "Natural language coaching"],
-    storeLink: null,
-    playLink: null,
+    highlights: ["SwiftUI", "HealthKit", "Barcode", "Food DB"],
+    price: "$299",
+    buyUrl: "#",
   },
 ];
 
+const filters: { value: ProductType | "all"; label: string; icon: typeof BookOpen }[] = [
+  { value: "all", label: "All", icon: Sparkles },
+  { value: "ebook", label: "Ebooks", icon: BookOpen },
+  { value: "app_code", label: "App Code", icon: Code2 },
+];
+
 export function Products() {
+  const [filter, setFilter] = useState<ProductType | "all">("all");
+  const filtered =
+    filter === "all" ? products : products.filter((p) => p.type === filter);
+
   return (
-    <div style={{ background: "#000", color: "#fff", paddingTop: "80px" }}>
+    <div style={{ background: "#000", color: "#fff", paddingTop: "80px", minHeight: "100vh" }}>
       {/* Header */}
-      <section style={{ padding: "80px 0 60px", position: "relative", overflow: "hidden" }}>
+      <section style={{ padding: "80px 0 48px", position: "relative", overflow: "hidden" }}>
         <div
           style={{
             position: "absolute",
@@ -113,8 +141,17 @@ export function Products() {
         />
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <FadeIn>
-            <p style={{ color: "#34d399", fontSize: "0.78rem", letterSpacing: "0.15em", textTransform: "uppercase", fontFamily: "'Inter', sans-serif", marginBottom: "14px" }}>
-              Shipped Products
+            <p
+              style={{
+                color: "#34d399",
+                fontSize: "0.78rem",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                fontFamily: "'Inter', sans-serif",
+                marginBottom: "14px",
+              }}
+            >
+              Products
             </p>
             <h1
               style={{
@@ -126,285 +163,299 @@ export function Products() {
                 marginBottom: "20px",
               }}
             >
-              Apps I've{" "}
-              <span style={{ background: "linear-gradient(90deg, #34d399, #60a5fa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                Built & Shipped
+              Ebooks &{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #34d399, #60a5fa)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                App Code
               </span>
             </h1>
-            <p style={{ color: "rgba(255,255,255,0.45)", fontFamily: "'Inter', sans-serif", maxWidth: "500px", margin: "0 auto", fontSize: "1rem", lineHeight: "1.7" }}>
-              Real products. Real users. Real impact. Not just portfolio pieces — these are live apps people use daily.
+            <p
+              style={{
+                color: "rgba(255,255,255,0.45)",
+                fontFamily: "'Inter', sans-serif",
+                maxWidth: "520px",
+                margin: "0 auto",
+                fontSize: "1rem",
+                lineHeight: "1.7",
+              }}
+            >
+              Learn from ebooks or jump-start your project with production-ready Flutter & iOS source code.
             </p>
           </FadeIn>
         </div>
+
+        {/* Filter tabs */}
+        <FadeIn delay={0.1}>
+          <div className="max-w-7xl mx-auto px-6 flex justify-center mt-10">
+            <div
+              style={{
+                display: "inline-flex",
+                gap: "4px",
+                padding: "6px",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: "14px",
+              }}
+            >
+              {filters.map((f) => {
+                const active = filter === f.value;
+                const Icon = f.icon;
+                return (
+                  <button
+                    key={f.value}
+                    type="button"
+                    onClick={() => setFilter(f.value)}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "10px 20px",
+                      borderRadius: "10px",
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "0.9rem",
+                      fontWeight: "500",
+                      color: active ? "#fff" : "rgba(255,255,255,0.5)",
+                      background: active ? "rgba(52,211,153,0.15)" : "transparent",
+                      border: active ? "1px solid rgba(52,211,153,0.35)" : "1px solid transparent",
+                      cursor: "pointer",
+                      transition: "all 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!active) {
+                        e.currentTarget.style.background = "rgba(255,255,255,0.06)";
+                        e.currentTarget.style.color = "rgba(255,255,255,0.85)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!active) {
+                        e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.color = "rgba(255,255,255,0.5)";
+                      }
+                    }}
+                  >
+                    <Icon size={18} />
+                    {f.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </FadeIn>
       </section>
 
-      {/* Products */}
+      {/* Product grid */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <div className="flex flex-col gap-8">
-          {products.map((product, i) => (
-            <FadeIn key={product.id} delay={i * 0.1}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filtered.map((product, i) => (
+            <FadeIn key={product.id} delay={i * 0.08}>
               <div
                 style={{
                   background: "#0a0a0a",
                   border: "1px solid rgba(255,255,255,0.06)",
                   borderRadius: "24px",
                   overflow: "hidden",
-                  transition: "all 0.3s",
-                  opacity: product.status === "coming" ? 0.85 : 1,
+                  transition: "all 0.3s ease",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
                 }}
                 className="hover:border-white/12 group"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  {/* Image side */}
+                {/* Cover */}
+                <div
+                  style={{
+                    height: "200px",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      transition: "transform 0.5s ease",
+                    }}
+                    className="group-hover:scale-105"
+                  />
                   <div
                     style={{
-                      height: "300px",
-                      position: "relative",
-                      overflow: "hidden",
-                      order: i % 2 === 0 ? 1 : 2,
+                      position: "absolute",
+                      inset: 0,
+                      background: `linear-gradient(180deg, transparent 40%, #0a0a0a 100%)`,
                     }}
-                    className="lg:order-none"
+                  />
+                  {/* Type badge */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "14px",
+                      left: "14px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      padding: "6px 12px",
+                      borderRadius: "10px",
+                      background: "rgba(0,0,0,0.7)",
+                      backdropFilter: "blur(8px)",
+                      border: `1px solid ${product.color}40`,
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "0.72rem",
+                      fontWeight: "600",
+                      color: product.color,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.05em",
+                    }}
                   >
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        transition: "transform 0.5s",
-                        filter: product.status === "coming" ? "grayscale(30%) brightness(0.6)" : "brightness(0.75)",
-                      }}
-                      className="group-hover:scale-105"
-                    />
+                    {product.type === "ebook" ? (
+                      <BookOpen size={12} />
+                    ) : (
+                      <Code2 size={12} />
+                    )}
+                    {product.type === "ebook" ? "Ebook" : "App Code"}
+                  </div>
+                  {product.price && (
                     <div
                       style={{
                         position: "absolute",
-                        inset: 0,
-                        background: `linear-gradient(${i % 2 === 0 ? "270deg" : "90deg"}, #0a0a0a 0%, transparent 60%)`,
-                      }}
-                    />
-                    {product.status === "coming" && (
-                      <div
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          background: "rgba(0,0,0,0.4)",
-                        }}
-                      >
-                        <div
-                          style={{
-                            background: "rgba(0,0,0,0.8)",
-                            border: "1px solid rgba(52,211,153,0.3)",
-                            borderRadius: "100px",
-                            padding: "10px 24px",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "8px",
-                            backdropFilter: "blur(10px)",
-                          }}
-                        >
-                          <Clock size={16} color="#34d399" />
-                          <span style={{ color: "#34d399", fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", fontWeight: "500" }}>
-                            Coming Q2 2025
-                          </span>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Content side */}
-                  <div className="p-8 flex flex-col justify-center">
-                    {/* App icon + name */}
-                    <div className="flex items-center gap-4 mb-5">
-                      <div
-                        style={{
-                          width: "64px",
-                          height: "64px",
-                          borderRadius: "16px",
-                          background: product.iconBg,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "1.8rem",
-                          boxShadow: `0 0 20px ${product.color}30`,
-                          flexShrink: 0,
-                        }}
-                      >
-                        {product.icon}
-                      </div>
-                      <div>
-                        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "1.5rem", fontWeight: "700", marginBottom: "2px" }}>
-                          {product.name}
-                        </h3>
-                        <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.82rem", fontFamily: "'Inter', sans-serif" }}>
-                          {product.tagline}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Platform + Status badges */}
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {product.platform.map((p) => (
-                        <div
-                          key={p}
-                          style={{
-                            background: "rgba(255,255,255,0.04)",
-                            border: "1px solid rgba(255,255,255,0.1)",
-                            borderRadius: "7px",
-                            padding: "4px 12px",
-                            fontSize: "0.72rem",
-                            color: "rgba(255,255,255,0.6)",
-                            fontFamily: "'Inter', sans-serif",
-                            fontWeight: "500",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "5px",
-                            textTransform: "capitalize",
-                          }}
-                        >
-                          {p === "ios" ? <Apple size={11} /> : <Smartphone size={11} />}
-                          {p === "ios" ? "iOS" : "Flutter"}
-                        </div>
-                      ))}
-                      <div
-                        style={{
-                          background: product.status === "live" ? "rgba(34,197,94,0.1)" : "rgba(52,211,153,0.1)",
-                          border: `1px solid ${product.status === "live" ? "rgba(34,197,94,0.25)" : "rgba(52,211,153,0.25)"}`,
-                          borderRadius: "7px",
-                          padding: "4px 12px",
-                          fontSize: "0.72rem",
-                          color: product.status === "live" ? "#22c55e" : "#34d399",
-                          fontFamily: "'Inter', sans-serif",
-                          fontWeight: "600",
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "5px",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.05em",
-                        }}
-                      >
-                        {product.status === "live" ? <CheckCircle2 size={11} /> : <Clock size={11} />}
-                        {product.status === "live" ? "Live" : "In Progress"}
-                      </div>
-                    </div>
-
-                    <p
-                      style={{
-                        color: "rgba(255,255,255,0.5)",
-                        fontSize: "0.9rem",
-                        fontFamily: "'Inter', sans-serif",
-                        lineHeight: "1.75",
-                        marginBottom: "20px",
+                        top: "14px",
+                        right: "14px",
+                        padding: "6px 12px",
+                        borderRadius: "10px",
+                        background: "rgba(0,0,0,0.75)",
+                        backdropFilter: "blur(8px)",
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontSize: "0.95rem",
+                        fontWeight: "700",
+                        color: "#fff",
                       }}
                     >
-                      {product.description}
-                    </p>
-
-                    {/* Highlights */}
-                    <div className="grid grid-cols-2 gap-2 mb-6">
-                      {product.highlights.map((h) => (
-                        <div key={h} className="flex items-center gap-2">
-                          <div
-                            style={{
-                              width: "6px",
-                              height: "6px",
-                              borderRadius: "50%",
-                              background: product.color,
-                              flexShrink: 0,
-                            }}
-                          />
-                          <span
-                            style={{
-                              color: "rgba(255,255,255,0.5)",
-                              fontSize: "0.78rem",
-                              fontFamily: "'Inter', sans-serif",
-                            }}
-                          >
-                            {h}
-                          </span>
-                        </div>
-                      ))}
+                      {product.price}
                     </div>
+                  )}
+                </div>
 
-                    {/* Store buttons */}
-                    {product.status === "live" ? (
-                      <div className="flex flex-wrap gap-3">
-                        {product.storeLink && (
-                          <a
-                            href={product.storeLink}
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              gap: "8px",
-                              background: "#000",
-                              border: "1px solid rgba(255,255,255,0.15)",
-                              borderRadius: "10px",
-                              padding: "10px 18px",
-                              fontFamily: "'Inter', sans-serif",
-                              fontSize: "0.82rem",
-                              fontWeight: "500",
-                              color: "#fff",
-                              transition: "all 0.2s",
-                            }}
-                            className="hover:border-white/30"
-                          >
-                            <Apple size={16} /> App Store
-                            <ExternalLink size={12} color="rgba(255,255,255,0.4)" />
-                          </a>
-                        )}
-                        {product.playLink && (
-                          <a
-                            href={product.playLink}
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              gap: "8px",
-                              background: "#000",
-                              border: "1px solid rgba(255,255,255,0.15)",
-                              borderRadius: "10px",
-                              padding: "10px 18px",
-                              fontFamily: "'Inter', sans-serif",
-                              fontSize: "0.82rem",
-                              fontWeight: "500",
-                              color: "#fff",
-                              transition: "all 0.2s",
-                            }}
-                            className="hover:border-white/30"
-                          >
-                            <Smartphone size={16} /> Play Store
-                            <ExternalLink size={12} color="rgba(255,255,255,0.4)" />
-                          </a>
-                        )}
-                      </div>
-                    ) : (
-                      <div
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3
+                    style={{
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontSize: "1.25rem",
+                      fontWeight: "700",
+                      marginBottom: "4px",
+                      lineHeight: "1.3",
+                    }}
+                  >
+                    {product.name}
+                  </h3>
+                  <p
+                    style={{
+                      color: "rgba(255,255,255,0.45)",
+                      fontSize: "0.8rem",
+                      fontFamily: "'Inter', sans-serif",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    {product.tagline}
+                  </p>
+                  <p
+                    style={{
+                      color: "rgba(255,255,255,0.55)",
+                      fontSize: "0.88rem",
+                      fontFamily: "'Inter', sans-serif",
+                      lineHeight: "1.6",
+                      marginBottom: "16px",
+                      flex: 1,
+                    }}
+                  >
+                    {product.description}
+                  </p>
+
+                  {/* Highlights */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {product.highlights.slice(0, 4).map((h) => (
+                      <span
+                        key={h}
                         style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: "8px",
-                          background: `${product.color}10`,
-                          border: `1px solid ${product.color}25`,
-                          borderRadius: "10px",
-                          padding: "10px 18px",
+                          padding: "4px 10px",
+                          borderRadius: "8px",
+                          background: "rgba(255,255,255,0.05)",
+                          border: "1px solid rgba(255,255,255,0.08)",
+                          fontSize: "0.72rem",
+                          color: "rgba(255,255,255,0.55)",
                           fontFamily: "'Inter', sans-serif",
-                          fontSize: "0.82rem",
-                          fontWeight: "500",
-                          color: product.color,
                         }}
                       >
-                        <Clock size={15} /> Launching Q2 2025 — stay tuned
-                      </div>
-                    )}
+                        {h}
+                      </span>
+                    ))}
                   </div>
+
+                  {/* Buy Now */}
+                  <a
+                    href={product.buyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      width: "100%",
+                      padding: "14px 20px",
+                      borderRadius: "14px",
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "0.95rem",
+                      fontWeight: "600",
+                      color: "#000",
+                      background: `linear-gradient(135deg, #34d399 0%, #10b981 100%)`,
+                      border: "none",
+                      cursor: "pointer",
+                      transition: "all 0.25s ease",
+                      boxShadow: "0 4px 20px rgba(52,211,153,0.25)",
+                    }}
+                    className="hover:opacity-95"
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                      e.currentTarget.style.boxShadow = "0 8px 28px rgba(52,211,153,0.35)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "0 4px 20px rgba(52,211,153,0.25)";
+                    }}
+                  >
+                    <ShoppingCart size={18} />
+                    Buy Now
+                    <ExternalLink size={14} style={{ opacity: 0.8 }} />
+                  </a>
                 </div>
               </div>
             </FadeIn>
           ))}
         </div>
+
+        {filtered.length === 0 && (
+          <FadeIn>
+            <div
+              style={{
+                textAlign: "center",
+                padding: "60px 24px",
+                color: "rgba(255,255,255,0.4)",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              No products in this category yet. Check back soon.
+            </div>
+          </FadeIn>
+        )}
       </section>
     </div>
   );

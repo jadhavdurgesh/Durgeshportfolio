@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router";
 import { motion, useInView } from "motion/react";
 import {
@@ -27,8 +27,8 @@ const techStack = [
 ];
 
 const stats = [
-  { value: "4+", label: "Apps Shipped", icon: Smartphone },
-  { value: "3+", label: "Happy Clients", icon: Users },
+  { value: "10+", label: "Apps Shipped", icon: Smartphone },
+  { value: "10+", label: "Happy Clients", icon: Users },
   { value: "3+", label: "Years Exp.", icon: Zap },
   { value: "100%", label: "Production Ready", icon: Shield },
 ];
@@ -50,7 +50,7 @@ const featuredProjects = [
     color: "#8b5cf6",
     gradient: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
     tag: "Live",
-    image: "https://images.unsplash.com/photo-1673974943582-771d2b7ee30d?w=400&q=80",
+    image: "https://play-lh.googleusercontent.com/96eSt7bhpjBBrYEU-qzkZ_wSE9V-WAoDj2Q7I4aU_joiRWYT_aKYgc3IkT-LPF5TBLoi=w832-h470-rw",
   },
   {
     name: "Nutrahara",
@@ -407,7 +407,7 @@ export function Home() {
                   style={{ marginTop: "60px" }}
                 >
                   <PhoneMockup
-                    image="https://images.unsplash.com/photo-1675119711588-ecd395253cec?w=400&q=80"
+                    image="assets/home1.png"
                     color="#ec4899"
                   />
                 </motion.div>
@@ -421,7 +421,7 @@ export function Home() {
                   }}
                 >
                   <PhoneMockup
-                    image="https://images.unsplash.com/photo-1663153203126-08bbadc178ad?w=400&q=80"
+                    image="assets/home2.png"
                     color="#60a5fa"
                   />
                 </motion.div>

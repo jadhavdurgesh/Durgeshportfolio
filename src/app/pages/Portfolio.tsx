@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { NavLink } from "react-router";
 import {
@@ -59,7 +59,7 @@ const projects = [
     impact: "Improving sleep for thousands",
     color: "#8b5cf6",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
-    image: "https://images.unsplash.com/photo-1673974943582-771d2b7ee30d?w=600&q=80",
+    image: "https://play-lh.googleusercontent.com/96eSt7bhpjBBrYEU-qzkZ_wSE9V-WAoDj2Q7I4aU_joiRWYT_aKYgc3IkT-LPF5TBLoi=w832-h470-rw",
     problem:
       "Most sleep apps felt clinical and difficult to use. Users needed a calming, beautiful interface with actionable insights.",
     solution:
