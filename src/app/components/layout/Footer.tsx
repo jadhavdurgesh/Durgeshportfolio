@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { Github, Linkedin, Twitter, Mail, Code2, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Mail, Code2, Heart } from "lucide-react";
 
 const footerLinks = {
   Pages: [
@@ -16,10 +16,11 @@ const footerLinks = {
 };
 
 const socials = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:durgesh@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/jadhavdurgesh", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/jadhav-durgesh/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/Durgesh_Jadhav_", label: "Twitter" },
+  { icon: Instagram, href: "https://www.instagram.com/code.with.d/", label: "Instagram" },
+  { icon: Mail, href: "mailto:decode749@gmail.com", label: "Email" },
 ];
 
 export function Footer() {

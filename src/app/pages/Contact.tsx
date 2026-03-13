@@ -8,6 +8,7 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Instagram,
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
@@ -37,10 +38,10 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "durgesh@example.com",
+    value: "decode749@gmail.com",
     sub: "Best for project inquiries",
     color: "#60a5fa",
-    href: "mailto:durgesh@example.com",
+    href: "mailto:decode749@gmail.com",
   },
   {
     icon: MapPin,
@@ -61,9 +62,10 @@ const contactInfo = [
 ];
 
 const socials = [
-  { icon: Github, href: "https://github.com", label: "GitHub", color: "#fff" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "#0ea5e9" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter", color: "#60a5fa" },
+  { icon: Github, href: "https://github.com/jadhavdurgesh", label: "GitHub", color: "#fff" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/jadhav-durgesh/", label: "LinkedIn", color: "#0ea5e9" },
+  { icon: Twitter, href: "https://x.com/Durgesh_Jadhav_", label: "Twitter", color: "#60a5fa" },
+  { icon: Instagram, href: "https://www.instagram.com/code.with.d/", label: "Instagram", color: "#ec4899" },
 ];
 
 const projectTypes = [

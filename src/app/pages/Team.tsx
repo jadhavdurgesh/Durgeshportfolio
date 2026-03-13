@@ -5,6 +5,7 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Instagram,
   Code2,
   Smartphone,
   Palette,
@@ -41,9 +42,10 @@ const founder = {
   achievements: ["4 Apps Shipped", "3+ Clients Served", "100% On-Time Delivery", "4.8★ Avg App Rating"],
   image: "https://images.unsplash.com/photo-1638983752157-052aa1f15bf1?w=400&q=80",
   socials: [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Github, href: "https://github.com/jadhavdurgesh", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/jadhav-durgesh/", label: "LinkedIn" },
+    { icon: Twitter, href: "https://x.com/Durgesh_Jadhav_", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/code.with.d/", label: "Instagram" },
   ],
 };
 
