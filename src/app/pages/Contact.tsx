@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { contactFormEmail } from "@/lib/images";
 
 function FadeIn({
   children,
@@ -88,13 +89,47 @@ export function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setSubmitted(true);
+    setError(null);
+
+    try {
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${encodeURIComponent(contactFormEmail)}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            projectType: formData.projectType,
+            budget: formData.budget || "Not specified",
+            message: formData.message,
+            _subject: `Portfolio inquiry from ${formData.name}`,
+            _template: "table",
+          }),
+        }
+      );
+
+      const result = await response.json();
+      if (!response.ok || result.success !== "true") {
+        throw new Error("Failed to send message");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(
+        "Something went wrong. Please email me directly at jadhavdurgesh007@gmail.com."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -522,6 +557,19 @@ export function Contact() {
                           onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.09)")}
                         />
                       </div>
+
+                      {error && (
+                        <p
+                          style={{
+                            color: "#f87171",
+                            fontSize: "0.85rem",
+                            fontFamily: "'Inter', sans-serif",
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {error}
+                        </p>
+                      )}
 
                       <button
                         type="submit"

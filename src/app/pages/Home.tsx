@@ -12,6 +12,7 @@ import {
   ChevronRight,
   Quote,
 } from "lucide-react";
+import { resumeUrl } from "@/lib/images";
 
 const techStack = [
   { name: "Flutter", color: "#54C5F8" },
@@ -331,8 +332,10 @@ export function Home() {
                 >
                   View My Work <ArrowRight size={17} />
                 </NavLink>
-                <NavLink
-                  to="/contact"
+                <a
+                  href={resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -346,11 +349,12 @@ export function Home() {
                     fontSize: "0.95rem",
                     color: "rgba(255,255,255,0.8)",
                     transition: "all 0.2s",
+                    textDecoration: "none",
                   }}
                   className="hover:border-white/30 hover:bg-white/10"
                 >
                   <Download size={17} /> Download CV
-                </NavLink>
+                </a>
               </motion.div>
 
               {/* Badges */}
