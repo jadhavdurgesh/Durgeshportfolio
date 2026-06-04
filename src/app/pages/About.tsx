@@ -11,6 +11,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import { images } from "@/lib/images";
 
 function FadeIn({
   children,
@@ -41,25 +42,25 @@ const skills = [
     category: "Mobile",
     icon: Smartphone,
     color: "#60a5fa",
-    items: ["Flutter", "SwiftUI", "Dart", "Swift", "UIKit"],
+    items: ["Flutter", "React Native", "Kotlin", "Jetpack Compose", "Dart"],
+  },
+  {
+    category: "Android Stack",
+    icon: Layers,
+    color: "#3DDC84",
+    items: ["MVVM", "Coroutines", "Hilt", "Room", "Retrofit", "WorkManager"],
   },
   {
     category: "Backend & APIs",
     icon: Cpu,
     color: "#a78bfa",
-    items: ["Firebase", "Supabase", "REST APIs", "GraphQL", "Node.js"],
-  },
-  {
-    category: "Architecture",
-    icon: Layers,
-    color: "#34d399",
-    items: ["Clean Architecture", "MVVM", "Riverpod", "BLoC", "GetX"],
+    items: ["Node.js", "Firebase", "Supabase", "REST APIs", "MongoDB"],
   },
   {
     category: "DevOps & Tools",
     icon: GitBranch,
     color: "#f59e0b",
-    items: ["Git", "CI/CD", "Fastlane", "Xcode", "VS Code"],
+    items: ["Git", "CI/CD", "Android Studio", "VS Code"],
   },
 ];
 
@@ -68,13 +69,13 @@ const differentiators = [
     icon: Flame,
     title: "Production Mindset",
     description:
-      "Every line of code I write is built for real users, not just to pass a review. Performance, reliability, and UX — non-negotiables.",
+      "Every line of code I write is built for real users, not just to pass a review. Performance, reliability, and UX are non negotiable.",
   },
   {
     icon: CheckCircle2,
-    title: "End-to-End Delivery",
+    title: "End to End Delivery",
     description:
-      "From requirements to App Store — I handle the full pipeline. UI, logic, API integration, testing, and submission.",
+      "From requirements to Play Store, I handle the full pipeline. UI, logic, API integration, testing, and release.",
   },
   {
     icon: Code2,
@@ -84,9 +85,9 @@ const differentiators = [
   },
   {
     icon: Smartphone,
-    title: "Native-level Polish",
+    title: "Native Level Polish",
     description:
-      "Fluid animations, crisp layouts, platform-native interactions. Your app will feel like it was built by Apple.",
+      "Fluid animations, crisp layouts, and platform-native interactions across Flutter, React Native, and Android.",
   },
 ];
 
@@ -94,25 +95,25 @@ const timeline = [
   {
     year: "2022",
     title: "Started Mobile Journey",
-    desc: "Dove deep into Flutter and Swift, building personal projects and contributing to open source.",
+    desc: "Built foundations in Flutter, Android, and mobile architecture through personal projects and open source.",
     color: "#60a5fa",
   },
   {
-    year: "2023",
-    title: "First Production App",
-    desc: "Shipped FemTrack — a health tracking app to the App Store and Play Store. Real users, real feedback, real lessons.",
+    year: "2024",
+    title: "Nutrahara Inc. · FemTrack",
+    desc: "Shipped FemTrack, a production women's health app, and backend services with Node.js, MongoDB, and Redis.",
     color: "#a78bfa",
   },
   {
-    year: "2024",
-    title: "PillowTalk & Nutrahara",
-    desc: "Delivered two more production apps — a sleep wellness platform and an iOS-native nutrition tracker.",
+    year: "2025",
+    title: "Park+ · SDE",
+    desc: "Engineering Flutter and Android features at scale: VMS, resident modules, and native migrations from WebView.",
     color: "#f472b6",
   },
   {
-    year: "2025",
-    title: "AI Budget Tracker",
-    desc: "Building next-gen finance app with AI insights, real-time sync, and a premium Flutter design system.",
+    year: "2026",
+    title: "NewsApp & MailNimble",
+    desc: "Built an offline first Jetpack Compose news app and shipped MailNimble, an AI email assistant with Gemini and OAuth2.",
     color: "#34d399",
   },
 ];
@@ -188,7 +189,7 @@ export function About() {
                   marginBottom: "20px",
                 }}
               >
-                I'm <strong style={{ color: "rgba(255,255,255,0.9)" }}>Durgesh Jadhav</strong> — a Flutter and iOS developer with 3+ years of hands-on experience building production mobile applications. I'm not a freelancer who builds mockups — I build real products used by real people.
+                I'm <strong style={{ color: "rgba(255,255,255,0.9)" }}>Durgesh Jadhav</strong>, a mobile engineer with 3+ years shipping production apps in Flutter, React Native, and Android (Kotlin and Jetpack Compose). Currently at Park+ building features for millions of users.
               </p>
               <p
                 style={{
@@ -199,7 +200,7 @@ export function About() {
                   marginBottom: "32px",
                 }}
               >
-                My approach is simple: ship high-quality apps with clean architecture, beautiful UI, and zero compromise on performance. If you want someone who codes fast AND codes well — I'm your developer.
+                My approach is simple: ship high quality apps with clean architecture, beautiful UI, and zero compromise on performance. If you want someone who codes fast and codes well, I'm your developer.
               </p>
               <NavLink
                 to="/contact"
@@ -255,7 +256,7 @@ export function About() {
                     }}
                   >
                     <img
-                      src="https://images.unsplash.com/photo-1638983752157-052aa1f15bf1?w=200&q=80"
+                      src={images.profile}
                       alt="Durgesh Jadhav"
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
@@ -282,7 +283,7 @@ export function About() {
                       marginBottom: "20px",
                     }}
                   >
-                    Flutter & iOS Developer
+                    Flutter · React Native · Android
                   </p>
                   <div
                     style={{
@@ -291,10 +292,10 @@ export function About() {
                     }}
                   >
                     {[
-                      ["Location", "India"],
+                      ["Location", "New Delhi, India"],
                       ["Experience", "3+ Years"],
-                      ["Apps Shipped", "4 Production"],
-                      ["Specialization", "Flutter • SwiftUI"],
+                      ["Apps Shipped", "10+ Production"],
+                      ["Specialization", "Flutter, RN, Compose"],
                     ].map(([label, value]) => (
                       <div
                         key={label}

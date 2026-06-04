@@ -38,15 +38,15 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "decode749@gmail.com",
+    value: "jadhavdurgesh007@gmail.com",
     sub: "Best for project inquiries",
     color: "#60a5fa",
-    href: "mailto:decode749@gmail.com",
+    href: "mailto:jadhavdurgesh007@gmail.com",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "India",
+    value: "New Delhi, India",
     sub: "Available for remote globally",
     color: "#a78bfa",
     href: null,
@@ -71,7 +71,8 @@ const socials = [
 const projectTypes = [
   "New mobile app from scratch",
   "Flutter development",
-  "iOS / SwiftUI app",
+  "Android / Jetpack Compose app",
+  "React Native development",
   "UI implementation from Figma",
   "App performance optimization",
   "Other",
@@ -139,7 +140,7 @@ export function Contact() {
               </span>
             </h1>
             <p style={{ color: "rgba(255,255,255,0.45)", fontFamily: "'Inter', sans-serif", maxWidth: "500px", margin: "0 auto", fontSize: "1rem", lineHeight: "1.7" }}>
-              Whether you have a fully fleshed-out idea or just a spark — I'd love to hear it. Let's find the best path forward together.
+              Whether you have a fully formed idea or just a spark, I'd love to hear it. Let's find the best path forward together.
             </p>
           </FadeIn>
         </div>
@@ -325,7 +326,7 @@ export function Contact() {
             {/* Trust indicators */}
             <FadeIn delay={0.35}>
               <div className="mt-4 grid grid-cols-2 gap-3">
-                {["NDA-Friendly", "Transparent Pricing", "Weekly Updates", "On-Time Delivery"].map((t) => (
+                {["NDA friendly", "Transparent pricing", "Weekly updates", "On time delivery"].map((t) => (
                   <div
                     key={t}
                     style={{
@@ -484,7 +485,7 @@ export function Contact() {
                           }}
                         >
                           <option value="" style={{ background: "#111" }}>Select budget range...</option>
-                          {["< $5k", "$5k – $15k", "$15k – $30k", "$30k – $60k", "$60k+", "Let's discuss"].map((b) => (
+                          {["< $5k", "$5k to $15k", "$15k to $30k", "$30k to $60k", "$60k+", "Let's discuss"].map((b) => (
                             <option key={b} value={b} style={{ background: "#111", color: "#fff" }}>{b}</option>
                           ))}
                         </select>

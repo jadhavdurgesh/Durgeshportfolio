@@ -9,6 +9,7 @@ import {
   ChevronRight,
   X,
 } from "lucide-react";
+import { images, playStoreLinks } from "@/lib/images";
 
 function FadeIn({
   children,
@@ -41,7 +42,7 @@ const projects = [
     impact: "Empowering 1000+ women",
     color: "#ec4899",
     gradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
-    image: "https://images.unsplash.com/photo-1675119711588-ecd395253cec?w=600&q=80",
+    image: images.femtrack,
     problem:
       "Women lacked a unified, privacy-first app to track menstrual cycles, symptoms, and health trends with meaningful insights.",
     solution:
@@ -49,6 +50,7 @@ const projects = [
     tech: ["Flutter", "Firebase", "Riverpod", "Swift", "Health Kit"],
     results: ["1000+ active users", "4.8★ App Store rating", "Featured in 3 health blogs", "Zero data breaches"],
     category: "Health",
+    storeUrl: playStoreLinks.femtrack,
   },
   {
     id: "pillowtalk",
@@ -59,7 +61,7 @@ const projects = [
     impact: "Improving sleep for thousands",
     color: "#8b5cf6",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
-    image: "https://play-lh.googleusercontent.com/96eSt7bhpjBBrYEU-qzkZ_wSE9V-WAoDj2Q7I4aU_joiRWYT_aKYgc3IkT-LPF5TBLoi=w832-h470-rw",
+    image: images.pillowtalk,
     problem:
       "Most sleep apps felt clinical and difficult to use. Users needed a calming, beautiful interface with actionable insights.",
     solution:
@@ -67,6 +69,7 @@ const projects = [
     tech: ["Flutter", "Dart", "Supabase", "OpenAI API", "Riverpod"],
     results: ["500+ daily active users", "25% avg sleep improvement reported", "4.7★ Play Store", "Featured in ProductHunt"],
     category: "Wellness",
+    storeUrl: playStoreLinks.pillowtalk,
   },
   {
     id: "nutrahara",
@@ -669,26 +672,31 @@ export function Portfolio() {
                 >
                   Build Something Similar <ArrowRight size={16} />
                 </NavLink>
-                <button
-                  onClick={() => setSelected(null)}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: "10px",
-                    padding: "12px 24px",
-                    fontFamily: "'Inter', sans-serif",
-                    fontWeight: "500",
-                    fontSize: "0.88rem",
-                    color: "rgba(255,255,255,0.6)",
-                    cursor: "pointer",
-                  }}
-                  className="hover:bg-white/10"
-                >
-                  <ExternalLink size={15} /> View Live App
-                </button>
+                {selected.storeUrl ? (
+                  <a
+                    href={selected.storeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      background: "rgba(255,255,255,0.05)",
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      borderRadius: "10px",
+                      padding: "12px 24px",
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: "500",
+                      fontSize: "0.88rem",
+                      color: "rgba(255,255,255,0.6)",
+                      cursor: "pointer",
+                      textDecoration: "none",
+                    }}
+                    className="hover:bg-white/10"
+                  >
+                    <ExternalLink size={15} /> View Live App
+                  </a>
+                ) : null}
               </div>
             </div>
           </motion.div>

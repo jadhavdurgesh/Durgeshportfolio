@@ -4,7 +4,8 @@ import { NavLink } from "react-router";
 import {
   Smartphone,
   Code2,
-  Apple,
+  Layers,
+  Repeat2,
   Palette,
   Zap,
   ArrowRight,
@@ -37,16 +38,16 @@ const services = [
   {
     icon: Smartphone,
     title: "Mobile App Development",
-    tagline: "End-to-end app creation",
+    tagline: "End to end app creation",
     description:
-      "From initial concept to App Store submission. I handle architecture, UI, backend integration, testing, and deployment — the complete pipeline.",
+      "From initial concept to Play Store release. I handle architecture, UI, backend integration, testing, and deployment, the complete pipeline.",
     features: [
       "Requirements analysis & architecture",
       "Full UI/UX implementation",
       "Backend API integration",
       "Testing & QA",
-      "App Store submission",
-      "Post-launch support",
+      "Play Store submission",
+      "Post launch support",
     ],
     color: "#60a5fa",
     gradient: "linear-gradient(135deg, #3b82f6, #06b6d4)",
@@ -55,51 +56,69 @@ const services = [
   {
     icon: Code2,
     title: "Flutter Development",
-    tagline: "Cross-platform with native feel",
+    tagline: "Cross platform with native feel",
     description:
-      "Pixel-perfect Flutter apps that run on iOS and Android from a single, clean codebase. State management, animations, custom widgets — all done right.",
+      "Pixel perfect Flutter apps that run on Android and iOS from a single, clean codebase. State management, animations, and custom widgets, all done right.",
     features: [
       "Clean Architecture pattern",
       "Riverpod / BLoC state management",
       "Custom animations & transitions",
-      "Platform-native interactions",
+      "Platform native interactions",
       "Performance optimization",
-      "Multi-platform deployment",
+      "Multi platform deployment",
     ],
     color: "#54C5F8",
     gradient: "linear-gradient(135deg, #54C5F8, #3b82f6)",
     popular: true,
   },
   {
-    icon: Apple,
-    title: "iOS App Development",
-    tagline: "Native SwiftUI excellence",
+    icon: Layers,
+    title: "Android Development",
+    tagline: "Kotlin & Jetpack Compose",
     description:
-      "Native iOS apps built with SwiftUI and Swift. Deep Apple ecosystem integration — HealthKit, CoreData, iCloud, Apple Pay — all natively handled.",
+      "Native Android apps with Jetpack Compose, MVVM, and modern Android architecture. Room, Retrofit, Hilt, Coroutines, and WorkManager with production patterns throughout.",
     features: [
-      "SwiftUI & UIKit",
-      "Apple ecosystem APIs",
-      "HealthKit & CoreData",
-      "Apple Pay integration",
-      "TestFlight & App Store",
-      "App Store Optimization",
+      "Jetpack Compose UI",
+      "MVVM + Clean Architecture",
+      "Room & Retrofit integration",
+      "Hilt dependency injection",
+      "Offline first caching",
+      "Play Store deployment",
     ],
-    color: "#f59e0b",
-    gradient: "linear-gradient(135deg, #f59e0b, #ec4899)",
+    color: "#3DDC84",
+    gradient: "linear-gradient(135deg, #3DDC84, #3b82f6)",
+    popular: false,
+  },
+  {
+    icon: Repeat2,
+    title: "React Native Development",
+    tagline: "Cross platform JavaScript",
+    description:
+      "React Native apps with shared business logic across platforms. Navigation, native modules, API integration, and performance tuning for production scale.",
+    features: [
+      "Component driven architecture",
+      "REST API integration",
+      "Native module bridging",
+      "State management patterns",
+      "Performance optimization",
+      "Android & iOS builds",
+    ],
+    color: "#61DAFB",
+    gradient: "linear-gradient(135deg, #61DAFB, #3b82f6)",
     popular: false,
   },
   {
     icon: Palette,
     title: "UI Implementation",
-    tagline: "Design → Pixel-perfect code",
+    tagline: "Design to pixel perfect code",
     description:
-      "You bring the Figma file. I bring it to life. Flutter or SwiftUI, I translate design with precision — every shadow, every animation, every micro-interaction.",
+      "You bring the Figma file. I bring it to life in Flutter, Compose, or React Native. Every shadow, animation, and interaction matches the design.",
     features: [
-      "Figma to Flutter/SwiftUI",
+      "Figma to Flutter / Compose / RN",
       "Custom component library",
       "Design system integration",
       "Responsive layouts",
-      "Micro-animations",
+      "Micro animations",
       "Dark mode support",
     ],
     color: "#a78bfa",
@@ -111,7 +130,7 @@ const services = [
     title: "App Performance Optimization",
     tagline: "Make your app blazing fast",
     description:
-      "Got an existing app that feels sluggish? I audit, diagnose, and fix performance bottlenecks — frame drops, slow startup, memory leaks, all resolved.",
+      "Got an existing app that feels sluggish? I audit, diagnose, and fix performance bottlenecks: frame drops, slow startup, memory leaks, all resolved.",
     features: [
       "Performance profiling & audit",
       "Frame rate optimization",
@@ -131,7 +150,7 @@ const process = [
   { step: "02", title: "Scoping & Proposal", desc: "I send a detailed proposal with milestones, tech choices, timeline, and transparent pricing." },
   { step: "03", title: "Design & Architecture", desc: "UI mockups, technical architecture, and a sprint plan before a single line of code is written." },
   { step: "04", title: "Development Sprints", desc: "Weekly demos. You see real progress, not just updates. Full transparency throughout." },
-  { step: "05", title: "Testing & Launch", desc: "Rigorous QA, App Store submission, and a smooth launch with post-launch support." },
+  { step: "05", title: "Testing & Launch", desc: "Rigorous QA, store submission, and a smooth launch with post launch support." },
 ];
 
 export function Services() {
@@ -390,7 +409,7 @@ export function Services() {
               Not Sure What You Need?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.45)", fontFamily: "'Inter', sans-serif", maxWidth: "400px", margin: "0 auto 28px", fontSize: "0.95rem" }}>
-              Drop me a message. I'll help you figure out the best approach for your app idea — no sales pitch.
+              Drop me a message. I'll help you figure out the best approach for your app idea. No sales pitch.
             </p>
             <NavLink
               to="/contact"

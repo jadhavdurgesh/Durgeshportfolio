@@ -15,13 +15,13 @@ import {
 
 const techStack = [
   { name: "Flutter", color: "#54C5F8" },
-  { name: "SwiftUI", color: "#F05138" },
+  { name: "React Native", color: "#61DAFB" },
+  { name: "Kotlin", color: "#7F52FF" },
+  { name: "Jetpack Compose", color: "#3DDC84" },
   { name: "Dart", color: "#00B4AB" },
   { name: "Firebase", color: "#FFA000" },
-  { name: "Swift", color: "#FA7343" },
   { name: "REST APIs", color: "#60a5fa" },
-  { name: "Riverpod", color: "#a78bfa" },
-  { name: "Figma", color: "#F24E1E" },
+  { name: "Node.js", color: "#68A063" },
   { name: "Git", color: "#F05032" },
   { name: "Supabase", color: "#3ECF8E" },
 ];
@@ -30,36 +30,36 @@ const stats = [
   { value: "10+", label: "Apps Shipped", icon: Smartphone },
   { value: "10+", label: "Happy Clients", icon: Users },
   { value: "3+", label: "Years Exp.", icon: Zap },
-  { value: "100%", label: "Production Ready", icon: Shield },
+  { value: "100%", label: "Production ready", icon: Shield },
 ];
 
 const featuredProjects = [
   {
+    name: "NewsApp",
+    platform: "Kotlin & Jetpack Compose",
+    impact: "Offline first Android news app with Room caching and WorkManager sync",
+    color: "#3DDC84",
+    gradient: "linear-gradient(135deg, #3DDC84, #3b82f6)",
+    tag: "Live",
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80",
+  },
+  {
     name: "FemTrack",
-    platform: "Flutter • iOS",
-    impact: "Empowering 1000+ women with cycle & health tracking",
+    platform: "Flutter & Android",
+    impact: "Women's health app with personalized features and real time data flows",
     color: "#ec4899",
     gradient: "linear-gradient(135deg, #ec4899, #8b5cf6)",
     tag: "Live",
     image: "https://images.unsplash.com/photo-1675119711588-ecd395253cec?w=400&q=80",
   },
   {
-    name: "PillowTalk",
-    platform: "Flutter",
-    impact: "Sleep wellness app with AI-powered insights",
+    name: "MailNimble",
+    platform: "Flutter & Node.js",
+    impact: "AI powered email assistant with Gmail OAuth2 and smart tone based replies",
     color: "#8b5cf6",
     gradient: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
     tag: "Live",
-    image: "https://play-lh.googleusercontent.com/96eSt7bhpjBBrYEU-qzkZ_wSE9V-WAoDj2Q7I4aU_joiRWYT_aKYgc3IkT-LPF5TBLoi=w832-h470-rw",
-  },
-  {
-    name: "Nutrahara",
-    platform: "iOS SwiftUI",
-    impact: "Nutrition intelligence with 500k+ food database",
-    color: "#3b82f6",
-    gradient: "linear-gradient(135deg, #3b82f6, #06b6d4)",
-    tag: "Live",
-    image: "https://images.unsplash.com/photo-1758786977080-a5e60a3f843c?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1596526131083-e8e83c8ab5c0?w=400&q=80",
   },
 ];
 
@@ -67,7 +67,7 @@ const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "Founder, FemTrack",
-    text: "Durgesh shipped our MVP in 6 weeks with pixel-perfect UI. He doesn't just code — he thinks product. Highly recommend for any mobile-first startup.",
+    text: "Durgesh shipped our MVP in 6 weeks with pixel perfect UI. He doesn't just code. He thinks product. Highly recommend for any mobile first startup.",
     rating: 5,
     avatar: "SM",
   },
@@ -81,7 +81,7 @@ const testimonials = [
   {
     name: "Priya Sharma",
     role: "Product Manager, Nutrahara",
-    text: "Found Durgesh for our iOS app — stayed for the entire product. His ability to translate design to native SwiftUI is extraordinary.",
+    text: "Durgesh shipped our Flutter app end to end, from APIs to Play Store. Strong Android native skills and a production mindset throughout.",
     rating: 5,
     avatar: "PS",
   },
@@ -300,8 +300,9 @@ export function Home() {
                 <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>
                   Durgesh Jadhav
                 </span>
-                — a Flutter & iOS developer who builds production-ready apps with
-                Apple-level polish. 4+ apps shipped. Real users. Real results.
+                , a mobile engineer building production apps with Flutter, React
+                Native, and Android (Kotlin and Jetpack Compose). 10+ apps shipped.
+                Real users. Real results.
               </motion.p>
 
               <motion.div
@@ -359,7 +360,7 @@ export function Home() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex flex-wrap gap-3 mt-10"
               >
-                {["Flutter Expert", "iOS SwiftUI", "4 Apps in Production"].map(
+                {["Flutter", "React Native", "Jetpack Compose"].map(
                   (badge) => (
                     <span
                       key={badge}
@@ -407,7 +408,7 @@ export function Home() {
                   style={{ marginTop: "60px" }}
                 >
                   <PhoneMockup
-                    image="assets/home1.png"
+                    image="/assets/home1.png"
                     color="#ec4899"
                   />
                 </motion.div>
@@ -421,7 +422,7 @@ export function Home() {
                   }}
                 >
                   <PhoneMockup
-                    image="assets/home2.png"
+                    image="/assets/home2.png"
                     color="#60a5fa"
                   />
                 </motion.div>
@@ -618,7 +619,7 @@ export function Home() {
                 fontSize: "0.95rem",
               }}
             >
-              Production apps used by real people — not portfolio placeholders.
+              Production apps used by real people, not portfolio placeholders.
             </p>
           </div>
         </FadeIn>
@@ -947,8 +948,8 @@ export function Home() {
                 lineHeight: "1.7",
               }}
             >
-              From concept to App Store — I build mobile apps that are polished,
-              performant, and production-ready.
+              From concept to Play Store, I build mobile apps that are polished,
+              performant, and production ready.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <NavLink

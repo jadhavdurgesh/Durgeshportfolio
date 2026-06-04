@@ -20,7 +20,7 @@ const socials = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/jadhav-durgesh/", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com/Durgesh_Jadhav_", label: "Twitter" },
   { icon: Instagram, href: "https://www.instagram.com/code.with.d/", label: "Instagram" },
-  { icon: Mail, href: "mailto:decode749@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:jadhavdurgesh007@gmail.com", label: "Email" },
 ];
 
 export function Footer() {
@@ -83,7 +83,7 @@ export function Footer() {
                 maxWidth: "300px",
               }}
             >
-              Flutter & iOS developer building production-ready mobile apps. Turning bold ideas into polished digital products.
+              Flutter, React Native and Android developer building production ready mobile apps. Turning bold ideas into polished digital products.
             </p>
             <div className="flex items-center gap-4 mt-6">
               {socials.map(({ icon: Icon, href, label }) => (

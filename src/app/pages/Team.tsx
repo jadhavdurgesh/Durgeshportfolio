@@ -12,6 +12,7 @@ import {
   ArrowRight,
   Star,
 } from "lucide-react";
+import { images } from "@/lib/images";
 
 function FadeIn({
   children,
@@ -37,10 +38,10 @@ function FadeIn({
 const founder = {
   name: "Durgesh Jadhav",
   role: "Founder & Lead Developer",
-  bio: "Flutter & iOS developer with 3+ years of building production-grade mobile apps. I combine engineering precision with designer-level attention to detail. Every app I ship is one I'd be proud to put on my own phone.",
-  skills: ["Flutter", "SwiftUI", "Dart", "Swift", "Firebase", "Supabase"],
-  achievements: ["4 Apps Shipped", "3+ Clients Served", "100% On-Time Delivery", "4.8★ Avg App Rating"],
-  image: "https://images.unsplash.com/photo-1638983752157-052aa1f15bf1?w=400&q=80",
+  bio: "Mobile engineer with 3+ years building production apps in Flutter, React Native, and Android (Kotlin and Jetpack Compose). I combine engineering precision with a production mindset, from Park+ scale to startup MVPs.",
+  skills: ["Flutter", "React Native", "Kotlin", "Jetpack Compose", "Node.js", "Firebase"],
+  achievements: ["10+ Apps Shipped", "5+ Freelance Projects", "LinkedIn Top Voice", "500+ Acelance Community"],
+  image: images.profile,
   socials: [
     { icon: Github, href: "https://github.com/jadhavdurgesh", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/jadhav-durgesh/", label: "LinkedIn" },
@@ -53,7 +54,7 @@ const collaborators = [
   {
     name: "UI Design Partner",
     role: "Product Designer",
-    bio: "Expert in Figma design systems and mobile UI/UX. Creates the stunning visual designs that I then implement pixel-perfectly.",
+    bio: "Expert in Figma design systems and mobile UI/UX. Creates the stunning visual designs that I then implement pixel perfectly.",
     icon: Palette,
     color: "#a78bfa",
     skills: ["Figma", "Design Systems", "Prototyping"],
@@ -62,11 +63,11 @@ const collaborators = [
   {
     name: "Backend Specialist",
     role: "Node.js & Firebase Engineer",
-    bio: "Handles complex backend architecture, real-time databases, and API development when projects require dedicated backend scale.",
+    bio: "Handles complex backend architecture, real time databases, and API development when projects require dedicated backend scale.",
     icon: Code2,
     color: "#60a5fa",
     skills: ["Node.js", "Firebase", "PostgreSQL"],
-    status: "On-Demand",
+    status: "On demand",
   },
   {
     name: "QA Engineer",
@@ -75,7 +76,7 @@ const collaborators = [
     icon: Smartphone,
     color: "#34d399",
     skills: ["Manual Testing", "Automation", "Accessibility"],
-    status: "Project-Based",
+    status: "Project based",
   },
 ];
 
@@ -124,7 +125,7 @@ export function Team() {
               </span>
             </h1>
             <p style={{ color: "rgba(255,255,255,0.45)", fontFamily: "'Inter', sans-serif", maxWidth: "520px", margin: "0 auto", fontSize: "1rem", lineHeight: "1.7" }}>
-              A lean, elite operation. Core development by me — supported by trusted collaborators when the project demands it.
+              A lean, elite operation. Core development by me, supported by trusted collaborators when the project demands it.
             </p>
           </FadeIn>
         </div>
@@ -458,7 +459,7 @@ export function Team() {
               Want Me On Your Team?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.45)", fontFamily: "'Inter', sans-serif", maxWidth: "400px", margin: "0 auto 28px", fontSize: "0.95rem" }}>
-              Available for full-time, contract, or freelance engagements. Let's build something great together.
+              Available for full time, contract, or freelance engagements. Let's build something great together.
             </p>
             <NavLink
               to="/contact"

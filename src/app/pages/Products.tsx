@@ -45,7 +45,7 @@ const products: Product[] = [
     type: "ebook",
     name: "Flutter Clean Architecture",
     tagline: "From zero to mastery",
-    description: "Comprehensive 65-page ebook covering everything from fundamental principles to advanced techniques in UI/UX design.",
+    description: "Comprehensive 65 page ebook covering everything from fundamental principles to advanced techniques in UI/UX design.",
     image: "https://uiuxshelly.vercel.app/assets/2-C1BiLFaB.png",
     color: "#54C5F8",
     gradient: "linear-gradient(135deg, #54C5F8 0%, #3b82f6 100%)",
@@ -58,7 +58,7 @@ const products: Product[] = [
     type: "ebook",
     name: "Build Your Portfolio From Scratch With Me",
     tagline: "This ebook helps you craft a portfolio that truly stands out",
-    description: "Everyone teaches design, tools, and case studies but no one clearly explains the real ways to make money as a beginner. I struggled, experimented, and learned everything the hard way. This eBook is the guide I wish someone had given me. Inside, I break down the earning paths in a simple, honest, and beginner-friendly way so you know exactly where to start and how to grow even if you’re still learning UI/UX.",
+    description: "Everyone teaches design, tools, and case studies but no one clearly explains the real ways to make money as a beginner. I struggled, experimented, and learned everything the hard way. This ebook is the guide I wish someone had given me. Inside, I break down the earning paths in a simple, honest, beginner friendly way so you know exactly where to start and how to grow even if you’re still learning UI/UX.",
     image: "https://uiuxshelly.vercel.app/assets/1-BFCqUArY.png",
     color: "#F05138",
     gradient: "linear-gradient(135deg, #F05138 0%, #ec4899 100%)",
@@ -75,7 +75,7 @@ const products: Product[] = [
     image: "https://uiuxshelly.vercel.app/assets/3-CsPL_l1_.png",
     color: "#ec4899",
     gradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
-    highlights: ["Full source", "Documentation", "Firebase setup", "App Store ready"],
+    highlights: ["Full source", "Documentation", "Firebase setup", "Play Store ready"],
     price: "$199",
     buyUrl: "https://topmate.io/shelly07/1816043?utm_source=public_profile&utm_campaign=shelly07",
   },
@@ -84,7 +84,7 @@ const products: Product[] = [
     type: "app_code",
     name: "Build Your First Case Study With Me",
     tagline: "Build Your First Case Study With Me",
-    description: "In this E-Book, you’ll learn how to create a clear, story-driven UI/UX case study using the format: Problem → Research → Ideas → UI → Learnings. You’ll also learn how to explain your thinking, highlight user needs, and make your portfolio stand out, along with receiving personal feedback on your work.",
+    description: "In this ebook, you’ll learn how to create a clear, story driven UI/UX case study using the format: Problem, Research, Ideas, UI, Learnings. You’ll also learn how to explain your thinking, highlight user needs, and make your portfolio stand out, along with receiving personal feedback on your work.",
     image: "https://uiuxshelly.vercel.app/assets/4-B49ANgFQ.png",
     color: "#8b5cf6",
     gradient: "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)",
@@ -96,12 +96,12 @@ const products: Product[] = [
     id: "nutrahara-source",
     type: "app_code",
     name: "Wireframing 101: Where Every Great Design Begins",
-    tagline: "Native SwiftUI nutrition app",
-    description: "Complete SwiftUI source: 500k+ food database, barcode scanning, HealthKit sync, and macro dashboards. Production-quality native iOS.",
+    tagline: "Jetpack Compose starter template",
+    description: "Production style Android source with Compose UI, MVVM structure, and patterns you can extend for real apps.",
     image: "https://uiuxshelly.vercel.app/assets/232-3q9WQhvQ.png",
-    color: "#3b82f6",
-    gradient: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
-    highlights: ["SwiftUI", "HealthKit", "Barcode", "Food DB"],
+    color: "#3DDC84",
+    gradient: "linear-gradient(135deg, #3DDC84 0%, #3b82f6 100%)",
+    highlights: ["Compose", "MVVM", "Room", "Retrofit"],
     price: "$299",
     buyUrl: "#",
   },
@@ -180,7 +180,7 @@ export function Products() {
                 lineHeight: "1.7",
               }}
             >
-              Learn from ebooks or jump-start your project with production-ready Flutter & iOS source code.
+              Learn from ebooks or jump start your project with production ready Flutter and Android source code.
             </p>
           </FadeIn>
         </div>
