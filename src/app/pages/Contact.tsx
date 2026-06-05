@@ -12,7 +12,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
-import { contactFormEmail } from "@/lib/images";
+import { contactFormEmail, submitContactForm } from "@/lib/contactForm";
 
 function FadeIn({
   children,
@@ -97,35 +97,13 @@ export function Contact() {
     setError(null);
 
     try {
-      const response = await fetch(
-        `https://formsubmit.co/ajax/${encodeURIComponent(contactFormEmail)}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            name: formData.name,
-            email: formData.email,
-            projectType: formData.projectType,
-            budget: formData.budget || "Not specified",
-            message: formData.message,
-            _subject: `Portfolio inquiry from ${formData.name}`,
-            _template: "table",
-          }),
-        }
-      );
-
-      const result = await response.json();
-      if (!response.ok || result.success !== "true") {
-        throw new Error("Failed to send message");
-      }
-
+      await submitContactForm(formData);
       setSubmitted(true);
-    } catch {
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "Failed to send message.";
       setError(
-        "Something went wrong. Please email me directly at jadhavdurgesh007@gmail.com."
+        `${message} Or email me directly at ${contactFormEmail}.`
       );
     } finally {
       setLoading(false);

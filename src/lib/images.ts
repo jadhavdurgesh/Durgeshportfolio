@@ -5,7 +5,6 @@ export const images = {
   pillowtalk: "/assets/pillowtalk.png",
 } as const;
 
-/** FormSubmit.co — submissions go to this inbox (activate via first confirmation email) */
 export const contactFormEmail = "jadhavdurgesh007@gmail.com";
 
 export const resumeUrl =

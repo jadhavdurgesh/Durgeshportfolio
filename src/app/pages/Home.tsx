@@ -13,6 +13,9 @@ import {
   Quote,
 } from "lucide-react";
 import { resumeUrl } from "@/lib/images";
+import { projects } from "@/lib/projects";
+
+const featuredProjects = projects.filter((p) => p.status === "Live");
 
 const techStack = [
   { name: "Flutter", color: "#54C5F8" },
@@ -32,36 +35,6 @@ const stats = [
   { value: "10+", label: "Happy Clients", icon: Users },
   { value: "3+", label: "Years Exp.", icon: Zap },
   { value: "100%", label: "Production ready", icon: Shield },
-];
-
-const featuredProjects = [
-  {
-    name: "NewsApp",
-    platform: "Kotlin & Jetpack Compose",
-    impact: "Offline first Android news app with Room caching and WorkManager sync",
-    color: "#3DDC84",
-    gradient: "linear-gradient(135deg, #3DDC84, #3b82f6)",
-    tag: "Live",
-    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80",
-  },
-  {
-    name: "FemTrack",
-    platform: "Flutter & Android",
-    impact: "Women's health app with personalized features and real time data flows",
-    color: "#ec4899",
-    gradient: "linear-gradient(135deg, #ec4899, #8b5cf6)",
-    tag: "Live",
-    image: "https://images.unsplash.com/photo-1675119711588-ecd395253cec?w=400&q=80",
-  },
-  {
-    name: "MailNimble",
-    platform: "Flutter & Node.js",
-    impact: "AI powered email assistant with Gmail OAuth2 and smart tone based replies",
-    color: "#8b5cf6",
-    gradient: "linear-gradient(135deg, #8b5cf6, #3b82f6)",
-    tag: "Live",
-    image: "https://images.unsplash.com/photo-1596526131083-e8e83c8ab5c0?w=400&q=80",
-  },
 ];
 
 const testimonials = [
@@ -630,7 +603,7 @@ export function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featuredProjects.map((project, i) => (
-            <FadeIn key={project.name} delay={i * 0.12}>
+            <FadeIn key={project.id} delay={i * 0.12}>
               <div
                 style={{
                   background: "#0a0a0a",
@@ -683,7 +656,7 @@ export function Home() {
                       fontWeight: "500",
                     }}
                   >
-                    {project.tag}
+                    {project.status}
                   </div>
                 </div>
 
@@ -698,7 +671,7 @@ export function Home() {
                       marginBottom: "6px",
                     }}
                   >
-                    {project.platform}
+                    {project.platform.join(" · ")}
                   </div>
                   <h3
                     style={{
