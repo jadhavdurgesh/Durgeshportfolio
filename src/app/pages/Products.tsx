@@ -68,7 +68,7 @@ const products: Product[] = [
   },
   {
     id: "femtrack-source",
-    type: "app_code",
+    type: "ebook",
     name: "How To Earn From UI/UX Designing",
     tagline: "Production Flutter app",
     description: "This ebook helps you to start earn from UI/UX Designing.",
@@ -81,7 +81,7 @@ const products: Product[] = [
   },
   {
     id: "pillowtalk-source",
-    type: "app_code",
+    type: "ebook",
     name: "Build Your First Case Study With Me",
     tagline: "Build Your First Case Study With Me",
     description: "In this ebook, you’ll learn how to create a clear, story driven UI/UX case study using the format: Problem, Research, Ideas, UI, Learnings. You’ll also learn how to explain your thinking, highlight user needs, and make your portfolio stand out, along with receiving personal feedback on your work.",
@@ -94,7 +94,7 @@ const products: Product[] = [
   },
   {
     id: "nutrahara-source",
-    type: "app_code",
+    type: "ebook",
     name: "Wireframing 101: Where Every Great Design Begins",
     tagline: "Jetpack Compose starter template",
     description: "Production style Android source with Compose UI, MVVM structure, and patterns you can extend for real apps.",

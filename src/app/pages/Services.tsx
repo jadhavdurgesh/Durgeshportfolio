@@ -112,9 +112,9 @@ const services = [
     title: "UI Implementation",
     tagline: "Design to pixel perfect code",
     description:
-      "You bring the Figma file. I bring it to life in Flutter, Compose, or React Native. Every shadow, animation, and interaction matches the design.",
+      "You bring the Figma file. I bring it to life in Flutter, Jetpack Compose, or React Native. Every shadow, animation, and interaction matches the design.",
     features: [
-      "Figma to Flutter / Compose / RN",
+      "Figma to Flutter / Compose / React Native",
       "Custom component library",
       "Design system integration",
       "Responsive layouts",

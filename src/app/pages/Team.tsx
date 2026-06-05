@@ -38,8 +38,8 @@ function FadeIn({
 const founder = {
   name: "Durgesh Jadhav",
   role: "Founder & Lead Developer",
-  bio: "Mobile engineer with 3+ years building production apps in Flutter, React Native, and Android (Kotlin and Jetpack Compose). I combine engineering precision with a production mindset, from Park+ scale to startup MVPs.",
-  skills: ["Flutter", "React Native", "Kotlin", "Jetpack Compose", "Node.js", "Firebase"],
+  bio: "Mobile engineer with 3+ years building production apps in Flutter, Android (Kotlin and Jetpack Compose), and React Native. I combine engineering precision with a production mindset, from Park+ scale to startup MVPs.",
+  skills: ["Flutter", "Kotlin", "Jetpack Compose", "React Native", "Node.js", "Firebase"],
   achievements: ["10+ Apps Shipped", "5+ Freelance Projects", "LinkedIn Top Voice", "500+ Acelance Community"],
   image: images.profile,
   socials: [

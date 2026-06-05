@@ -83,7 +83,7 @@ export function Footer() {
                 maxWidth: "300px",
               }}
             >
-              Flutter, React Native and Android developer building production ready mobile apps. Turning bold ideas into polished digital products.
+              Flutter, Android (Kotlin and Jetpack Compose), and React Native developer building production ready mobile apps. Turning bold ideas into polished digital products.
             </p>
             <div className="flex items-center gap-4 mt-6">
               {socials.map(({ icon: Icon, href, label }) => (
@@ -167,7 +167,7 @@ export function Footer() {
               gap: "4px",
             }}
           >
-            Built with <Heart size={12} color="#ec4899" fill="#ec4899" /> in Flutter & React
+            Built with <Heart size={12} color="#ec4899" fill="#ec4899" /> in Flutter, Kotlin & React Native
           </p>
         </div>
       </div>

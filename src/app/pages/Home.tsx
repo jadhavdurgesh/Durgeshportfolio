@@ -19,9 +19,9 @@ const featuredProjects = projects.filter((p) => p.status === "Live");
 
 const techStack = [
   { name: "Flutter", color: "#54C5F8" },
-  { name: "React Native", color: "#61DAFB" },
   { name: "Kotlin", color: "#7F52FF" },
   { name: "Jetpack Compose", color: "#3DDC84" },
+  { name: "React Native", color: "#61DAFB" },
   { name: "Dart", color: "#00B4AB" },
   { name: "Firebase", color: "#FFA000" },
   { name: "REST APIs", color: "#60a5fa" },
@@ -39,25 +39,18 @@ const stats = [
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "Founder, FemTrack",
+    name: "PJ Prakash",
+    role: "Founder & CEO, Nutrahara (FemTrack)",
     text: "Durgesh shipped our MVP in 6 weeks with pixel perfect UI. He doesn't just code. He thinks product. Highly recommend for any mobile first startup.",
     rating: 5,
-    avatar: "SM",
+    avatar: "PJ",
   },
   {
-    name: "Alex Chen",
-    role: "CEO, SleepTech",
+    name: "Vignesh",
+    role: "PillowTalk",
     text: "The cleanest Flutter code I've ever seen. Durgesh's attention to detail and production mindset made PillowTalk the polished app it is today.",
     rating: 5,
-    avatar: "AC",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Product Manager, Nutrahara",
-    text: "Durgesh shipped our Flutter app end to end, from APIs to Play Store. Strong Android native skills and a production mindset throughout.",
-    rating: 5,
-    avatar: "PS",
+    avatar: "V",
   },
 ];
 
@@ -274,8 +267,8 @@ export function Home() {
                 <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>
                   Durgesh Jadhav
                 </span>
-                , a mobile engineer building production apps with Flutter, React
-                Native, and Android (Kotlin and Jetpack Compose). 10+ apps shipped.
+                , a mobile engineer building production apps with Flutter, Android
+                (Kotlin and Jetpack Compose), and React Native. 10+ apps shipped.
                 Real users. Real results.
               </motion.p>
 
@@ -337,7 +330,7 @@ export function Home() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex flex-wrap gap-3 mt-10"
               >
-                {["Flutter", "React Native", "Jetpack Compose"].map(
+                {["Flutter", "Kotlin · Jetpack Compose", "React Native"].map(
                   (badge) => (
                     <span
                       key={badge}
@@ -776,7 +769,7 @@ export function Home() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {testimonials.map((t, i) => (
               <FadeIn key={t.name} delay={i * 0.1}>
                 <div
