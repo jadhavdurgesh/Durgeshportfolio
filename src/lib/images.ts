@@ -3,6 +3,7 @@ export const images = {
   profile: "/assets/profile_picture.jpeg",
   femtrack: "/assets/femtrack.png",
   pillowtalk: "/assets/pillowtalk.png",
+  daystack: "/assets/daystack1.png",
 } as const;
 
 export const contactFormEmail = "jadhavdurgesh007@gmail.com";

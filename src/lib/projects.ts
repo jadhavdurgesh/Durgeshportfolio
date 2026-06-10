@@ -58,6 +58,25 @@ export const projects = [
     category: "Nutrition",
   },
   {
+    id: "daystack",
+    name: "DayStack",
+    tagline: "Minimalist Weekly To-Do List & Productivity Tool",
+    platform: ["Flutter", "Web"],
+    status: "Live",
+    impact: "Plan your week, one day at a time",
+    color: "#f59e0b",
+    gradient: "linear-gradient(135deg, #f59e0b 0%, #ef4444 100%)",
+    image: images.daystack,
+    problem:
+      "Most to-do apps overwhelm users with features, notifications, and cluttered UIs that make planning feel like a chore.",
+    solution:
+      "Built DayStack — a minimalist weekly planner focused on clarity and ease, with light mode, dark mode, and customizable themes.",
+    tech: ["Flutter", "Dart", "Firebase", "Riverpod"],
+    results: ["Minimal weekly planning", "Light & dark mode", "Custom themes", "Live on web"],
+    category: "Productivity",
+    storeUrl: "https://daystack-codewithd.vercel.app/",
+  },
+  {
     id: "aibudget",
     name: "AI Budget Tracker",
     tagline: "Smart Finance with AI Insights",
