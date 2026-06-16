@@ -11,8 +11,28 @@ import {
   Palette,
   ArrowRight,
   Star,
+  Globe,
 } from "lucide-react";
 import { images } from "@/lib/images";
+
+function TopmateIcon({ size = 16, color = "currentColor" }: { size?: number; color?: string }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <path d="M8 8.5h8M12 8.5v7" />
+    </svg>
+  );
+}
 
 function FadeIn({
   children,
@@ -50,16 +70,22 @@ const founder = {
   ],
 };
 
+const designer = {
+  name: "Shelly Gupta",
+  role: "UI/UX Designer",
+  bio: "Creative designer with 2+ years of experience helping brands and startups build intuitive digital products. She has designed products used by thousands of users across national and international markets, balancing usability, aesthetics, and real business goals.",
+  skills: ["Figma", "UI Design", "UX Design", "Sketch", "Adobe Photoshop"],
+  achievements: ["2+ Years Experience", "10+ Projects Completed", "4+ International Clients", "100% Freelance Delivered"],
+  image: images.teammate1,
+  portfolio: "https://uiuxshelly.vercel.app/",
+  socials: [
+    { icon: Linkedin, href: "https://www.linkedin.com/in/shellygupta99/", label: "LinkedIn" },
+    { icon: Instagram, href: "https://www.instagram.com/uiux.shelly/", label: "Instagram" },
+    { icon: TopmateIcon, href: "https://topmate.io/shelly07", label: "Topmate" },
+  ],
+};
+
 const collaborators = [
-  {
-    name: "UI Design Partner",
-    role: "Product Designer",
-    bio: "Expert in Figma design systems and mobile UI/UX. Creates the stunning visual designs that I then implement pixel perfectly.",
-    icon: Palette,
-    color: "#a78bfa",
-    skills: ["Figma", "Design Systems", "Prototyping"],
-    status: "Collaborator",
-  },
   {
     name: "Backend Specialist",
     role: "Node.js & Firebase Engineer",
@@ -125,7 +151,7 @@ export function Team() {
               </span>
             </h1>
             <p style={{ color: "rgba(255,255,255,0.45)", fontFamily: "'Inter', sans-serif", maxWidth: "520px", margin: "0 auto", fontSize: "1rem", lineHeight: "1.7" }}>
-              A lean, elite operation. Core development by me, supported by trusted collaborators when the project demands it.
+              A lean, elite operation. Engineering and design working hand in hand, backed by trusted collaborators when the project demands it.
             </p>
           </FadeIn>
         </div>
@@ -298,6 +324,204 @@ export function Team() {
                     </a>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* Designer Card */}
+      <section className="max-w-7xl mx-auto px-6 pb-20">
+        <FadeIn>
+          <div
+            style={{
+              background: "linear-gradient(135deg, rgba(167,139,250,0.05), rgba(244,114,182,0.05))",
+              border: "1px solid rgba(255,255,255,0.08)",
+              borderRadius: "28px",
+              overflow: "hidden",
+            }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-5">
+              {/* Content */}
+              <div className="lg:col-span-3 p-10 flex flex-col justify-center order-2 lg:order-1">
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    background: "rgba(167,139,250,0.1)",
+                    border: "1px solid rgba(167,139,250,0.2)",
+                    borderRadius: "100px",
+                    padding: "4px 14px",
+                    fontSize: "0.72rem",
+                    color: "#a78bfa",
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: "600",
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    marginBottom: "16px",
+                    width: "fit-content",
+                  }}
+                >
+                  <Palette size={11} /> Design Partner
+                </div>
+
+                <h2
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "2rem",
+                    fontWeight: "700",
+                    marginBottom: "4px",
+                  }}
+                >
+                  {designer.name}
+                </h2>
+                <p
+                  style={{
+                    background: "linear-gradient(90deg, #a78bfa, #f472b6)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: "0.9rem",
+                    fontWeight: "500",
+                    marginBottom: "18px",
+                  }}
+                >
+                  {designer.role}
+                </p>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.5)",
+                    fontSize: "0.9rem",
+                    fontFamily: "'Inter', sans-serif",
+                    lineHeight: "1.75",
+                    marginBottom: "22px",
+                    maxWidth: "440px",
+                  }}
+                >
+                  {designer.bio}
+                </p>
+
+                {/* Achievements */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {designer.achievements.map((a) => (
+                    <div
+                      key={a}
+                      style={{
+                        background: "rgba(255,255,255,0.03)",
+                        border: "1px solid rgba(255,255,255,0.07)",
+                        borderRadius: "10px",
+                        padding: "10px 14px",
+                        fontSize: "0.78rem",
+                        color: "rgba(255,255,255,0.65)",
+                        fontFamily: "'Inter', sans-serif",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {a}
+                    </div>
+                  ))}
+                </div>
+
+                {/* Skills */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {designer.skills.map((s) => (
+                    <span
+                      key={s}
+                      style={{
+                        background: "rgba(167,139,250,0.1)",
+                        border: "1px solid rgba(167,139,250,0.2)",
+                        borderRadius: "6px",
+                        padding: "3px 10px",
+                        fontSize: "0.75rem",
+                        color: "#a78bfa",
+                        fontFamily: "'Inter', sans-serif",
+                      }}
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Portfolio + Socials */}
+                <div className="flex items-center gap-3 flex-wrap">
+                  <a
+                    href={designer.portfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      background: "rgba(167,139,250,0.1)",
+                      border: "1px solid rgba(167,139,250,0.25)",
+                      borderRadius: "10px",
+                      padding: "10px 18px",
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: "500",
+                      fontSize: "0.85rem",
+                      color: "#c4b5fd",
+                      transition: "all 0.2s",
+                    }}
+                    className="hover:bg-purple-500/20"
+                  >
+                    <Globe size={15} /> View Portfolio
+                  </a>
+                  {designer.socials.map(({ icon: Icon, href, label }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      style={{
+                        width: "38px",
+                        height: "38px",
+                        background: "rgba(255,255,255,0.05)",
+                        border: "1px solid rgba(255,255,255,0.1)",
+                        borderRadius: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        transition: "all 0.2s",
+                      }}
+                      className="hover:border-purple-500/40 hover:bg-purple-500/10"
+                    >
+                      <Icon size={16} color="rgba(255,255,255,0.6)" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Image */}
+              <div
+                style={{
+                  gridColumn: "span 2",
+                  position: "relative",
+                  minHeight: "380px",
+                }}
+                className="order-1 lg:order-2"
+              >
+                <img
+                  src={designer.image}
+                  alt={designer.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center 20%",
+                    filter: "brightness(0.85)",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(90deg, rgba(5,5,15,0.95) 0%, transparent 60%)",
+                  }}
+                  className="hidden lg:block"
+                />
               </div>
             </div>
           </div>

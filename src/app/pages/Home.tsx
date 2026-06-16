@@ -11,6 +11,7 @@ import {
   Shield,
   ChevronRight,
   Quote,
+  MapPin,
 } from "lucide-react";
 import { resumeUrl } from "@/lib/images";
 import { projects } from "@/lib/projects";
@@ -41,6 +42,7 @@ const testimonials = [
   {
     name: "PJ Prakash",
     role: "Founder & CEO, Nutrahara (FemTrack)",
+    location: "California, USA",
     text: "Durgesh shipped our MVP in 6 weeks with pixel perfect UI. He doesn't just code. He thinks product. Highly recommend for any mobile first startup.",
     rating: 5,
     avatar: "PJ",
@@ -48,6 +50,7 @@ const testimonials = [
   {
     name: "Vignesh",
     role: "PillowTalk",
+    location: "Bangalore, India",
     text: "The cleanest Flutter code I've ever seen. Durgesh's attention to detail and production mindset made PillowTalk the polished app it is today.",
     rating: 5,
     avatar: "V",
@@ -832,6 +835,20 @@ export function Home() {
                         }}
                       >
                         {t.role}
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "4px",
+                          marginTop: "2px",
+                          fontFamily: "'Inter', sans-serif",
+                          fontSize: "0.72rem",
+                          color: "rgba(96,165,250,0.85)",
+                        }}
+                      >
+                        <MapPin size={11} color="#60a5fa" />
+                        {t.location}
                       </div>
                     </div>
                     <div className="ml-auto flex gap-1">

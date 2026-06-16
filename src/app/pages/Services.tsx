@@ -2,11 +2,8 @@ import React, { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import { NavLink } from "react-router";
 import {
-  Smartphone,
   Code2,
   Layers,
-  Repeat2,
-  Palette,
   Zap,
   ArrowRight,
   Check,
@@ -16,15 +13,18 @@ import {
 function FadeIn({
   children,
   delay = 0,
+  className,
 }: {
   children: React.ReactNode;
   delay?: number;
+  className?: string;
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
     <motion.div
       ref={ref}
+      className={className}
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay, ease: "easeOut" }}
@@ -36,36 +36,18 @@ function FadeIn({
 
 const services = [
   {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    tagline: "End to end app creation",
-    description:
-      "From initial concept to Play Store release. I handle architecture, UI, backend integration, testing, and deployment, the complete pipeline.",
-    features: [
-      "Requirements analysis & architecture",
-      "Full UI/UX implementation",
-      "Backend API integration",
-      "Testing & QA",
-      "Play Store submission",
-      "Post launch support",
-    ],
-    color: "#60a5fa",
-    gradient: "linear-gradient(135deg, #3b82f6, #06b6d4)",
-    popular: false,
-  },
-  {
     icon: Code2,
-    title: "Flutter Development",
+    title: "Flutter App Development",
     tagline: "Cross platform with native feel",
     description:
-      "Pixel perfect Flutter apps that run on Android and iOS from a single, clean codebase. State management, animations, and custom widgets, all done right.",
+      "Pixel perfect Flutter apps that run on Android and iOS from a single, clean codebase. From concept to Play Store release, with state management, animations, and custom widgets done right.",
     features: [
       "Clean Architecture pattern",
       "Riverpod / BLoC state management",
       "Custom animations & transitions",
       "Platform native interactions",
-      "Performance optimization",
-      "Multi platform deployment",
+      "Testing & QA",
+      "Play Store submission",
     ],
     color: "#54C5F8",
     gradient: "linear-gradient(135deg, #54C5F8, #3b82f6)",
@@ -73,56 +55,20 @@ const services = [
   },
   {
     icon: Layers,
-    title: "Android Development",
-    tagline: "Kotlin & Jetpack Compose",
+    title: "Full-Stack Mobile Solutions",
+    tagline: "Flutter + Node.js",
     description:
-      "Native Android apps with Jetpack Compose, MVVM, and modern Android architecture. Room, Retrofit, Hilt, Coroutines, and WorkManager with production patterns throughout.",
+      "End to end product builds where I own both the app and the backend. Flutter on the front, Node.js APIs and real time data on the back, shipped as one cohesive system.",
     features: [
-      "Jetpack Compose UI",
-      "MVVM + Clean Architecture",
-      "Room & Retrofit integration",
-      "Hilt dependency injection",
-      "Offline first caching",
-      "Play Store deployment",
+      "Flutter mobile front end",
+      "Node.js REST / real time APIs",
+      "Database design & integration",
+      "Authentication & security",
+      "Firebase / Supabase services",
+      "Deployment & post launch support",
     ],
-    color: "#3DDC84",
-    gradient: "linear-gradient(135deg, #3DDC84, #3b82f6)",
-    popular: false,
-  },
-  {
-    icon: Repeat2,
-    title: "React Native Development",
-    tagline: "Cross platform JavaScript",
-    description:
-      "React Native apps with shared business logic across platforms. Navigation, native modules, API integration, and performance tuning for production scale.",
-    features: [
-      "Component driven architecture",
-      "REST API integration",
-      "Native module bridging",
-      "State management patterns",
-      "Performance optimization",
-      "Android & iOS builds",
-    ],
-    color: "#61DAFB",
-    gradient: "linear-gradient(135deg, #61DAFB, #3b82f6)",
-    popular: false,
-  },
-  {
-    icon: Palette,
-    title: "UI Implementation",
-    tagline: "Design to pixel perfect code",
-    description:
-      "You bring the Figma file. I bring it to life in Flutter, Jetpack Compose, or React Native. Every shadow, animation, and interaction matches the design.",
-    features: [
-      "Figma to Flutter / Compose / React Native",
-      "Custom component library",
-      "Design system integration",
-      "Responsive layouts",
-      "Micro animations",
-      "Dark mode support",
-    ],
-    color: "#a78bfa",
-    gradient: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+    color: "#60a5fa",
+    gradient: "linear-gradient(135deg, #3b82f6, #06b6d4)",
     popular: false,
   },
   {
@@ -352,7 +298,7 @@ export function Services() {
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {process.map((p, i) => (
-              <FadeIn key={p.step} delay={i * 0.08}>
+              <FadeIn key={p.step} delay={i * 0.08} className="h-full">
                 <div
                   style={{
                     background: "rgba(255,255,255,0.02)",
@@ -361,6 +307,7 @@ export function Services() {
                     padding: "22px 18px",
                     position: "relative",
                     transition: "all 0.3s",
+                    height: "100%",
                   }}
                   className="hover:border-blue-500/20"
                 >

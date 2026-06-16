@@ -14,6 +14,12 @@ import {
 } from "lucide-react";
 import { contactFormEmail, submitContactForm } from "@/lib/contactForm";
 
+function getCurrentQuarter() {
+  const now = new Date();
+  const quarter = Math.floor(now.getMonth() / 3) + 1;
+  return `Q${quarter} ${now.getFullYear()}`;
+}
+
 function FadeIn({
   children,
   delay = 0,
@@ -200,7 +206,7 @@ export function Contact() {
                     </span>
                   </div>
                   <p style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.78rem", fontFamily: "'Inter', sans-serif" }}>
-                    Accepting new projects for Q2 2025
+                    Accepting new projects for {getCurrentQuarter()}
                   </p>
                 </div>
               </div>

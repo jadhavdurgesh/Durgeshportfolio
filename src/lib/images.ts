@@ -1,6 +1,7 @@
 /** Local portfolio assets (served from /public/assets) */
 export const images = {
   profile: "/assets/profile_picture.jpeg",
+  teammate1: "/assets/teammate-1-profile.jpeg",
   femtrack: "/assets/femtrack.png",
   pillowtalk: "/assets/pillowtalk.png",
   daystack: "/assets/daystack1.png",
