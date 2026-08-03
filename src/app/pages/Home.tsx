@@ -20,9 +20,9 @@ const featuredProjects = projects.filter((p) => p.status === "Live");
 
 const techStack = [
   { name: "Flutter", color: "#54C5F8" },
+  { name: "React Native", color: "#61DAFB" },
   { name: "Kotlin", color: "#7F52FF" },
   { name: "Jetpack Compose", color: "#3DDC84" },
-  { name: "React Native", color: "#61DAFB" },
   { name: "Dart", color: "#00B4AB" },
   { name: "Firebase", color: "#FFA000" },
   { name: "REST APIs", color: "#60a5fa" },
@@ -270,8 +270,8 @@ export function Home() {
                 <span style={{ color: "rgba(255,255,255,0.9)", fontWeight: "500" }}>
                   Durgesh Jadhav
                 </span>
-                , a mobile engineer building production apps with Flutter, Android
-                (Kotlin and Jetpack Compose), and React Native. 10+ apps shipped.
+                , a mobile engineer building production apps with Flutter, React
+                Native, and Android (Kotlin and Jetpack Compose). 10+ apps shipped.
                 Real users. Real results.
               </motion.p>
 
@@ -333,7 +333,7 @@ export function Home() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex flex-wrap gap-3 mt-10"
               >
-                {["Flutter", "Kotlin · Jetpack Compose", "React Native"].map(
+                {["Flutter", "React Native", "Kotlin · Jetpack Compose"].map(
                   (badge) => (
                     <span
                       key={badge}

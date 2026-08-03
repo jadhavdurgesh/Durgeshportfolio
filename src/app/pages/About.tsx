@@ -90,7 +90,7 @@ const differentiators = [
     icon: Smartphone,
     title: "Native Level Polish",
     description:
-      "Fluid animations, crisp layouts, and platform-native interactions across Flutter, Android, and React Native.",
+      "Fluid animations, crisp layouts, and platform-native interactions across Flutter, React Native, and Android.",
   },
 ];
 
@@ -233,7 +233,7 @@ export function About() {
                 }}
               >
                 I'm <strong style={{ color: "rgba(255,255,255,0.9)" }}>Durgesh Jadhav</strong>, a B.Tech graduate from{" "}
-                <strong style={{ color: "rgba(255,255,255,0.9)" }}>NSUT</strong> (Netaji Subhas University of Technology), a Tier 1 engineering college in New Delhi (2025 batch). I ship production mobile apps in Flutter, Android (Kotlin and Jetpack Compose), and React Native, currently as an SDE at Park+ building for millions of users, while continuing as a contract freelance developer with Nutrahara.
+                <strong style={{ color: "rgba(255,255,255,0.9)" }}>NSUT</strong> (Netaji Subhas University of Technology), a Tier 1 engineering college in New Delhi (2025 batch). I ship production mobile apps in Flutter, React Native, and Android (Kotlin and Jetpack Compose), currently as an SDE at Park+ building for millions of users, while continuing as a contract freelance developer with Nutrahara.
               </p>
               <p
                 style={{
@@ -327,7 +327,7 @@ export function About() {
                       marginBottom: "20px",
                     }}
                   >
-                    Flutter · Kotlin · Jetpack Compose · React Native
+                    Flutter · React Native · Kotlin · Jetpack Compose
                   </p>
                   <div
                     style={{

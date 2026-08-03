@@ -78,8 +78,8 @@ const socials = [
 const projectTypes = [
   "New mobile app from scratch",
   "Flutter development",
-  "Android / Jetpack Compose app",
   "React Native development",
+  "Android / Jetpack Compose app",
   "UI implementation from Figma",
   "App performance optimization",
   "Other",
